@@ -1,0 +1,67 @@
+//      variables
+$color-border: #000;
+
+//     /variables
+
+//        mixins
+@mixin border($border-width) {
+  stroke: $color-border;
+  stroke-width: $border-width;
+  //stroke-opacity: 1;
+  //stroke-dasharray: none;
+}
+
+@mixin size-square($length) {
+  width: $length+px;
+  height: $length+px;
+}
+
+//       /mixins
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 900;
+  color: crimson;
+}
+
+.playing_field {
+  //width: 75%;
+}
+
+svg {
+   //@include size-square(363);
+  //@include size-square(726);
+ // width: 100%;
+ // height: auto;
+  .cell {
+    fill: #ffff00;
+    //fill-opacity: 1;
+    @include border(1);
+    @include size-square(40);
+  }
+
+  .border_bold {
+    fill: none;
+    //stroke: #000000;
+    @include border(3);
+    @include size-square(120);
+  }
+
+  .wrapper-input {
+    @include size-square(40);
+
+    input {
+      @include size-square(40);
+      text-align: center;
+      outline: none;
+      border: none;
+      background: transparent;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button{
+      -webkit-appearance: none;
+    }
+  }
+}

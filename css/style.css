@@ -1,0 +1,34 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 900;
+  color: crimson; }
+
+svg .cell {
+  fill: #ffff00;
+  stroke: #000;
+  stroke-width: 1;
+  width: 40px;
+  height: 40px; }
+
+svg .border_bold {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3;
+  width: 120px;
+  height: 120px; }
+
+svg .wrapper-input {
+  width: 40px;
+  height: 40px; }
+  svg .wrapper-input input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    outline: none;
+    border: none;
+    background: transparent; }
+  svg .wrapper-input input::-webkit-outer-spin-button,
+  svg .wrapper-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none; }
