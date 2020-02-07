@@ -5,6 +5,11 @@
   font-weight: 900;
   color: crimson; }
 
+.playing_field {
+  margin: 15vh auto 0;
+  padding: 20px;
+  max-width: 70vh; }
+
 svg .cell {
   fill: #ffff00;
   stroke: #000;
