@@ -26,8 +26,14 @@ gulp.task('brSync', () => {
     });
 });
 
+gulp.task('html', () => {
+    return gulp.src('./**/*.html', { since: gulp.lastRun('html') })
+        .pipe(brSync.reload({ stream: true }))
+});
+
 gulp.task('watch', gulp.parallel('brSync', () => {
-    gulp.watch('scss/**/*.scss', gulp.parallel('sass')); // следим за изменениями SASS 
+    gulp.watch('scss/**/*.scss', gulp.parallel('sass')); // следим за изменениями SASS
+    gulp.watch('./*.html', gulp.parallel('html'))     // следим за изменениями HTML  
 }));
 
 gulp.task('default', gulp.parallel('sass', 'watch'));  // задача по умолчанию (gulp)

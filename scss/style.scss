@@ -32,7 +32,7 @@ $color-border: #000;
 }
 
 svg {
-   //@include size-square(363);
+  //@include size-square(363);
   //@include size-square(726);
  // width: 100%;
  // height: auto;
@@ -43,11 +43,15 @@ svg {
     @include size-square(40);
   }
 
-  .border_bold {
+  .outer_border {
     fill: none;
     //stroke: #000000;
     @include border(3);
-    @include size-square(120);
+    @include size-square(366);
+  }
+
+  .inner_border {
+    @include border(3);
   }
 
   .wrapper-input {
