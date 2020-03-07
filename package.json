@@ -1,6 +1,5 @@
 {
     "dependencies": {
-        "browser-sync": "*",
         "gulp": "^4.0.0",
         "gulp-autoprefixer": "*",
         "gulp-beautify": "*",
@@ -15,5 +14,8 @@
         "gulp-uglify": "*",
         "jshint": "*",
         "main-bower-files": "*"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.26.7"
     }
 }

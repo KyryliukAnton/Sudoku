@@ -1,31 +1,33 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-var browserSync = require('browser-sync').create();
+'use strict';
 
-gulp.task('sass', async function(){
-  gulp.src(['scss/*.scss'])
-      .pipe(sass().on('error', sass.logError))
-      .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-      }))
-      .pipe(gulp.dest('./css'))
-  .pipe(browserSync.stream());
+const gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    brSync = require('browser-sync').create();   // подключаем плагин browser sync
+
+gulp.task('sass', () => {
+    return gulp.src('scss/**/*.scss')
+        .pipe(sourcemaps.init())        // активируем gulp-sourcemaps 
+        .pipe(sass({
+            outputStyle: 'nested',
+        })
+            .on('error', sass.logError))
+        .pipe(sourcemaps.write())   // создание карты css.map в текущей папке 
+        .pipe(gulp.dest('css')) 
+        .pipe(brSync.reload({ stream: true }))  // обновление (перезагрузка) страницы
 });
 
-gulp.task('sass:watch', function(){
-  gulp.watch(['scss/*.scss'], gulp.series('sass'));
+gulp.task('brSync', () => {
+    brSync.init({
+        server: {           // локальный сервер
+            baseDir: "./" // корневая папка
+        },
+        notify: true  // отклчение уведомлений
+    });
 });
 
-gulp.task('browser-sync', function() {
-  browserSync.init(["css/*.css", "*.html"], {
-    server: {
-      baseDir: "./"
-    }
-  })
-});
+gulp.task('watch', gulp.parallel('brSync', () => {
+    gulp.watch('scss/**/*.scss', gulp.parallel('sass')); // следим за изменениями SASS 
+}));
 
-gulp.task('watch', gulp.series('sass', gulp.parallel('sass:watch', 'browser-sync')));
-
-gulp.task('default', gulp.series('watch'));
+gulp.task('default', gulp.parallel('sass', 'watch'));  // задача по умолчанию (gulp)
