@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Noto Serif';
+  src: url("../fonts/notoserif/notoserif.woff2") format("woff2"), url("../fonts/notoserif/notoserif.woff") format("woff"), url("../fonts/notoserif/notoserif.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: 'Noto Serif';
+  src: url("../fonts/notoserif/notoserifbold.woff2") format("woff2"), url("../fonts/notoserif/notoserifbold.woff") format("woff"), url("../fonts/notoserif/notoserifbold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9udHMuY3NzIiwic291cmNlcyI6WyJmb250cy5zY3NzIl0sInNvdXJjZXNDb250ZW50IjpbIkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ05vdG8gU2VyaWYnO1xuICBzcmM6ICB1cmwoJy4uL2ZvbnRzL25vdG9zZXJpZi9ub3Rvc2VyaWYud29mZjInKSBmb3JtYXQoJ3dvZmYyJyksIFxuICB1cmwoJy4uL2ZvbnRzL25vdG9zZXJpZi9ub3Rvc2VyaWYud29mZicpIGZvcm1hdCgnd29mZicpLCBcbiAgdXJsKCcuLi9mb250cy9ub3Rvc2VyaWYvbm90b3NlcmlmLnR0ZicpIGZvcm1hdCgndHJ1ZXR5cGUnKTtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgZm9udC1zdHlsZTogbm9ybWFsO1xuICBmb250LXN0cmV0Y2g6IG5vcm1hbDtcbn1cbkBmb250LWZhY2Uge1xuICBmb250LWZhbWlseTogJ05vdG8gU2VyaWYnO1xuICBzcmM6IHVybCgnLi4vZm9udHMvbm90b3NlcmlmL25vdG9zZXJpZmJvbGQud29mZjInKSBmb3JtYXQoJ3dvZmYyJyksIFxuICB1cmwoJy4uL2ZvbnRzL25vdG9zZXJpZi9ub3Rvc2VyaWZib2xkLndvZmYnKSBmb3JtYXQoJ3dvZmYnKSwgXG4gIHVybCgnLi4vZm9udHMvbm90b3NlcmlmL25vdG9zZXJpZmJvbGQudHRmJykgZm9ybWF0KCd0cnVldHlwZScpO1xuICBmb250LXdlaWdodDogNzAwO1xuICBmb250LXN0eWxlOiBub3JtYWw7XG4gIGZvbnQtc3RyZXRjaDogbm9ybWFsO1xufVxuIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLFVBQVU7RUFDUixXQUFXLEVBQUUsWUFBWTtFQUN6QixHQUFHLEVBQUcseUNBQXlDLENBQUMsZUFBZSxFQUMvRCx3Q0FBd0MsQ0FBQyxjQUFjLEVBQ3ZELHVDQUF1QyxDQUFDLGtCQUFrQjtFQUMxRCxXQUFXLEVBQUUsR0FBRztFQUNoQixVQUFVLEVBQUUsTUFBTTtFQUNsQixZQUFZLEVBQUUsTUFBTTs7QUFFdEIsVUFBVTtFQUNSLFdBQVcsRUFBRSxZQUFZO0VBQ3pCLEdBQUcsRUFBRSw2Q0FBNkMsQ0FBQyxlQUFlLEVBQ2xFLDRDQUE0QyxDQUFDLGNBQWMsRUFDM0QsMkNBQTJDLENBQUMsa0JBQWtCO0VBQzlELFdBQVcsRUFBRSxHQUFHO0VBQ2hCLFVBQVUsRUFBRSxNQUFNO0VBQ2xCLFlBQVksRUFBRSxNQUFNIn0= */

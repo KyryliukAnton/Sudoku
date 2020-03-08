@@ -1,5 +1,11 @@
+//      import
+@import 'fonts.scss';
+//      /import
+
 //      variables
-$color-border: #000;
+$color-border: #4E3B45;
+$color-field: #CDDAC8;
+$color-text: #4E3B45;
 
 //     /variables
 
@@ -7,8 +13,6 @@ $color-border: #000;
 @mixin border($border-width) {
   stroke: $color-border;
   stroke-width: $border-width;
-  //stroke-opacity: 1;
-  //stroke-dasharray: none;
 }
 
 @mixin size-square($length) {
@@ -21,8 +25,9 @@ $color-border: #000;
 * {
   box-sizing: border-box;
   font-size: 16px;
-  font-weight: 900;
-  color: crimson;
+  font-weight: 700;
+  color: $color-text;
+  font-family: 'Noto Serif';
 }
 
 .playing_field {
@@ -32,20 +37,14 @@ $color-border: #000;
 }
 
 svg {
-  //@include size-square(363);
-  //@include size-square(726);
- // width: 100%;
- // height: auto;
   .cell {
-    fill: #ffff00;
-    //fill-opacity: 1;
+    fill: $color-field;
     @include border(1);
     @include size-square(40);
   }
 
   .outer_border {
     fill: none;
-    //stroke: #000000;
     @include border(3);
     @include size-square(366);
   }
@@ -54,7 +53,7 @@ svg {
     @include border(3);
   }
 
-  .wrapper-input {
+  .wrapper-input-cell {
     @include size-square(40);
 
     input {
@@ -63,11 +62,13 @@ svg {
       outline: none;
       border: none;
       background: transparent;
+      margin: 0;
+     // -moz-appearance: textfield;
     }
 
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button{
-      -webkit-appearance: none;
-    }
+    // input::-webkit-outer-spin-button,
+    // input::-webkit-inner-spin-button { 
+    // -webkit-appearance: none;
+    // } 
   }
 }

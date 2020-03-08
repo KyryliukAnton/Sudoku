@@ -31,9 +31,15 @@ gulp.task('html', () => {
         .pipe(brSync.reload({ stream: true }))
 });
 
+gulp.task('js', () => {
+    return gulp.src('js/**/*.js', { since: gulp.lastRun('js') })
+        .pipe(brSync.reload({ stream: true }))
+});
+
 gulp.task('watch', gulp.parallel('brSync', () => {
     gulp.watch('scss/**/*.scss', gulp.parallel('sass')); // следим за изменениями SASS
-    gulp.watch('./*.html', gulp.parallel('html'))     // следим за изменениями HTML  
+    gulp.watch('./*.html', gulp.parallel('html'))     // следим за изменениями HTML
+    gulp.watch('js/**/*.js', gulp.parallel('js')); // следим за изменениями JS  
 }));
 
 gulp.task('default', gulp.parallel('sass', 'watch'));  // задача по умолчанию (gulp)

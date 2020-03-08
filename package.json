@@ -12,6 +12,7 @@
         "gulp-shell": "*",
         "gulp-sourcemaps": "*",
         "gulp-uglify": "*",
+        "jquery": "^3.4.1",
         "jshint": "*",
         "main-bower-files": "*"
     },
