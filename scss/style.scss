@@ -86,8 +86,9 @@ svg {
 
   display: inline-flex;
   border: 2px solid $color-border;
+  width: 100%;
   .number {
-    width: 40px;
+    width: 11%;
     height: 40px;
     font-size: 20px;
     display: flex;
