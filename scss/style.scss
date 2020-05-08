@@ -6,6 +6,7 @@
 $color-border: #4E3B45;
 $color-field: #CDDAC8;
 $color-text: #4E3B45;
+$color-input-numbers: #381;
 //     /variables
 
 //        mixins
@@ -55,20 +56,9 @@ svg {
   .wrapper-input-cell {
     @include size-square(40);
 
-    input {
-      @include size-square(40);
-      text-align: center;
-      outline: none;
-      border: none;
-      background: transparent;
-      margin: 0;
-     // -moz-appearance: textfield;
+    .cell_number {
+      cursor: default;
     }
-
-    // input::-webkit-outer-spin-button,
-    // input::-webkit-inner-spin-button { 
-    // -webkit-appearance: none;
-    // } 
   }
 
   div {
@@ -84,20 +74,28 @@ svg {
 
 .numbers {
 
-  display: inline-flex;
+  display: flex;
   border: 2px solid $color-border;
-  width: 100%;
+  //width: 450px;
   .number {
-    width: 11%;
-    height: 40px;
+    //width: 50px;
+    //height: 48px;
+    padding: 10px;
     font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-right: 2px solid $color-border;
+    cursor: pointer;
+    //border: 2px solid $color-border;
   }
   :last-child {
     border: 0;
+    width: 48px;
+  }
+
+   > * {
+    flex: 1 1 250px;
+    margin: 0 10px;
   }
 }
 
@@ -105,3 +103,9 @@ svg {
   display: flex;
   justify-content: center;
 } 
+
+
+.wrapper-input-cell div.input_number {
+  cursor: pointer; 
+  color: $color-input-numbers;
+}
