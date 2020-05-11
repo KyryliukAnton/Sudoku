@@ -6,372 +6,390 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="playing_field">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 370" preserveAspectRatio="xMidYMid meet">
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <div id="victory">
+            <div>Ви розв'язали!</div>
+            <div class="div_victory">Час: <span id="time_game"></span></div>
+        </div>
+        <div id="start">Розпочати</div>
+    </div>
+</div>
+<div class="wrapper_content">
+    <div class="header">
+        <div class="block_time">
+            <span>Час: </span><span id="time">00:00</span>
+        </div>
 
-          
-        <!--                       Cells                          -->
- 
+        <div class="number" id="eraser" onclick="deleteNumber();">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M497.941 273.941c18.745-18.745 18.745-49.137 0-67.882l-160-160c-18.745-18.745-49.136-18.746-67.883 0l-256 256c-18.745 18.745-18.745 49.137 0 67.882l96 96A48.004 48.004 0 0 0 144 480h356c6.627 0 12-5.373 12-12v-40c0-6.627-5.373-12-12-12H355.883l142.058-142.059zm-302.627-62.627l137.373 137.373L265.373 416H150.628l-80-80 124.686-124.686z"></path>
+            </svg>
+        </div>
+    </div>
+    <div class="playing_field">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 370" preserveAspectRatio="xMidYMid meet">
+
+            <!--                       Cells                          -->
+
             <!--                      Column 1                -->
-
-        <rect class="cell" x="3" y="3" />
-                <foreignObject x="3" y="3" width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_0_0"></div>
-                </foreignObject>
-            <rect class="cell" x="3" y="43" />
-                <foreignObject x="3" y="43"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_0_1"></div>
-                </foreignObject>
-            <rect class="cell" x="3" y="83" />
-                <foreignObject x="3" y="83"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_0_2"></div>
-                </foreignObject>
-            <rect class="cell" x="3" y="125" />
-                <foreignObject x="3" y="125"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_0_3"></div>
-                </foreignObject>
-            <rect class="cell" x="3" y="165" />
-                <foreignObject x="3" y="165"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_0_4"></div>
-                </foreignObject>
-            <rect class="cell" x="3" y="205" />
-                <foreignObject x="3" y="205"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_0_5"></div>
-                </foreignObject>
-            <rect class="cell" x="3" y="247" />
-                <foreignObject x="3" y="247"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_0_6"></div>
-                </foreignObject>
-            <rect class="cell" x="3" y="287" />
-                <foreignObject x="3" y="287"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_0_7"></div>
-                </foreignObject>
-            <rect class="cell" x="3" y="327" />
-                <foreignObject x="3" y="327"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_0_8"></div>
-                </foreignObject>
+            <rect class="cell" x="3" y="3"/>
+            <foreignObject x="3" y="3" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_0_0"></div>
+            </foreignObject>
+            <rect class="cell" x="3" y="43"/>
+            <foreignObject x="3" y="43" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_0_1"></div>
+            </foreignObject>
+            <rect class="cell" x="3" y="83"/>
+            <foreignObject x="3" y="83" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_0_2"></div>
+            </foreignObject>
+            <rect class="cell" x="3" y="125"/>
+            <foreignObject x="3" y="125" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_0_3"></div>
+            </foreignObject>
+            <rect class="cell" x="3" y="165"/>
+            <foreignObject x="3" y="165" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_0_4"></div>
+            </foreignObject>
+            <rect class="cell" x="3" y="205"/>
+            <foreignObject x="3" y="205" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_0_5"></div>
+            </foreignObject>
+            <rect class="cell" x="3" y="247"/>
+            <foreignObject x="3" y="247" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_0_6"></div>
+            </foreignObject>
+            <rect class="cell" x="3" y="287"/>
+            <foreignObject x="3" y="287" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_0_7"></div>
+            </foreignObject>
+            <rect class="cell" x="3" y="327"/>
+            <foreignObject x="3" y="327" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_0_8"></div>
+            </foreignObject>
             <!--                    /Column 1                   -->
- 
+
             <!--                     Column 2                   -->
-            <rect class="cell" x="43" y="3" />
-                <foreignObject x="43" y="3"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_1_0"></div>
-                </foreignObject>
-            <rect class="cell" x="43" y="43" />
-                <foreignObject x="43" y="43"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_1_1"></div>
-                </foreignObject>
-            <rect class="cell" x="43" y="83" />
-                <foreignObject x="43" y="83"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_1_2"></div>
-                </foreignObject>
-            <rect class="cell" x="43" y="125" />
-                <foreignObject x="43" y="125"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_1_3"></div>
-                </foreignObject>
-            <rect class="cell" x="43" y="165" />
-                <foreignObject x="43" y="165"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_1_4"></div>
-                </foreignObject>
-            <rect class="cell" x="43" y="205" />
-                <foreignObject x="43" y="205"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_1_5"></div>
-                </foreignObject>
-            <rect class="cell" x="43" y="247" />
-                <foreignObject x="43" y="247"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_1_6"></div>
-                </foreignObject>
-            <rect class="cell" x="43" y="287" />
-                <foreignObject x="43" y="287"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_1_7"></div>
-                </foreignObject>
-            <rect class="cell" x="43" y="327" />
-                <foreignObject x="43" y="327"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_1_8"></div>
-                </foreignObject>
+            <rect class="cell" x="43" y="3"/>
+            <foreignObject x="43" y="3" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_1_0"></div>
+            </foreignObject>
+            <rect class="cell" x="43" y="43"/>
+            <foreignObject x="43" y="43" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_1_1"></div>
+            </foreignObject>
+            <rect class="cell" x="43" y="83"/>
+            <foreignObject x="43" y="83" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_1_2"></div>
+            </foreignObject>
+            <rect class="cell" x="43" y="125"/>
+            <foreignObject x="43" y="125" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_1_3"></div>
+            </foreignObject>
+            <rect class="cell" x="43" y="165"/>
+            <foreignObject x="43" y="165" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_1_4"></div>
+            </foreignObject>
+            <rect class="cell" x="43" y="205"/>
+            <foreignObject x="43" y="205" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_1_5"></div>
+            </foreignObject>
+            <rect class="cell" x="43" y="247"/>
+            <foreignObject x="43" y="247" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_1_6"></div>
+            </foreignObject>
+            <rect class="cell" x="43" y="287"/>
+            <foreignObject x="43" y="287" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_1_7"></div>
+            </foreignObject>
+            <rect class="cell" x="43" y="327"/>
+            <foreignObject x="43" y="327" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_1_8"></div>
+            </foreignObject>
             <!--                      /Column 2                  -->
 
             <!--                       Column 3                  -->
-            <rect class="cell" x="83" y="3"   />
-                <foreignObject x="83" y="3"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_2_0"></div>
-                </foreignObject>
-            <rect class="cell" x="83" y="43"  />
-                <foreignObject x="83" y="43"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_2_1"></div>
-                </foreignObject>
-            <rect class="cell" x="83" y="83"  />
-                <foreignObject x="83" y="83"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_2_2"></div>
-                </foreignObject>
-            <rect class="cell" x="83" y="125" />
-                <foreignObject x="83" y="125"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_2_3"></div>
-                </foreignObject>
-            <rect class="cell" x="83" y="165" />
-                <foreignObject x="83" y="165"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_2_4"></div>
-                </foreignObject>
-            <rect class="cell" x="83" y="205" />
-                <foreignObject x="83" y="205"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_2_5"></div>
-                </foreignObject>
-            <rect class="cell" x="83" y="247" />
-                <foreignObject x="83" y="247"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_2_6"></div>
-                </foreignObject>
-            <rect class="cell" x="83" y="287" />
-                <foreignObject x="83" y="287"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_2_7"></div>
-                </foreignObject>
-            <rect class="cell" x="83" y="327" />
-                <foreignObject x="83" y="327"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_2_8"></div>
-                </foreignObject>
+            <rect class="cell" x="83" y="3"/>
+            <foreignObject x="83" y="3" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_2_0"></div>
+            </foreignObject>
+            <rect class="cell" x="83" y="43"/>
+            <foreignObject x="83" y="43" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_2_1"></div>
+            </foreignObject>
+            <rect class="cell" x="83" y="83"/>
+            <foreignObject x="83" y="83" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_2_2"></div>
+            </foreignObject>
+            <rect class="cell" x="83" y="125"/>
+            <foreignObject x="83" y="125" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_2_3"></div>
+            </foreignObject>
+            <rect class="cell" x="83" y="165"/>
+            <foreignObject x="83" y="165" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_2_4"></div>
+            </foreignObject>
+            <rect class="cell" x="83" y="205"/>
+            <foreignObject x="83" y="205" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_2_5"></div>
+            </foreignObject>
+            <rect class="cell" x="83" y="247"/>
+            <foreignObject x="83" y="247" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_2_6"></div>
+            </foreignObject>
+            <rect class="cell" x="83" y="287"/>
+            <foreignObject x="83" y="287" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_2_7"></div>
+            </foreignObject>
+            <rect class="cell" x="83" y="327"/>
+            <foreignObject x="83" y="327" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_2_8"></div>
+            </foreignObject>
             <!--                     /Column 3                   -->
 
             <!--                      Column 4                   -->
-            <rect class="cell" x="125" y="3"   />
-                <foreignObject x="125" y="3"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_3_0"></div>
-                </foreignObject>
-            <rect class="cell" x="125" y="43"  />
-                <foreignObject x="125" y="43" width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_3_1"></div>
-                </foreignObject>
-            <rect class="cell" x="125" y="83"  />
-                <foreignObject x="125" y="83"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_3_2"></div>
-                </foreignObject>
-            <rect class="cell" x="125" y="125" />
-                <foreignObject x="125" y="125"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_3_3"></div>
-                </foreignObject>
-            <rect class="cell" x="125" y="165" />
-                <foreignObject x="125" y="165"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_3_4"></div>
-                </foreignObject>
-            <rect class="cell" x="125" y="205" />
-                <foreignObject x="125" y="205"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_3_5"></div>
-                </foreignObject>
-            <rect class="cell" x="125" y="247" />
-                <foreignObject x="125" y="247"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_3_6"></div>
-                </foreignObject>
-            <rect class="cell" x="125" y="287" />
-                <foreignObject x="125" y="287"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_3_7"></div>
-                </foreignObject>
-            <rect class="cell" x="125" y="327" />
-                <foreignObject x="125" y="327"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_3_8"></div>
-                </foreignObject>
+            <rect class="cell" x="125" y="3"/>
+            <foreignObject x="125" y="3" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_3_0"></div>
+            </foreignObject>
+            <rect class="cell" x="125" y="43"/>
+            <foreignObject x="125" y="43" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_3_1"></div>
+            </foreignObject>
+            <rect class="cell" x="125" y="83"/>
+            <foreignObject x="125" y="83" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_3_2"></div>
+            </foreignObject>
+            <rect class="cell" x="125" y="125"/>
+            <foreignObject x="125" y="125" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_3_3"></div>
+            </foreignObject>
+            <rect class="cell" x="125" y="165"/>
+            <foreignObject x="125" y="165" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_3_4"></div>
+            </foreignObject>
+            <rect class="cell" x="125" y="205"/>
+            <foreignObject x="125" y="205" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_3_5"></div>
+            </foreignObject>
+            <rect class="cell" x="125" y="247"/>
+            <foreignObject x="125" y="247" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_3_6"></div>
+            </foreignObject>
+            <rect class="cell" x="125" y="287"/>
+            <foreignObject x="125" y="287" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_3_7"></div>
+            </foreignObject>
+            <rect class="cell" x="125" y="327"/>
+            <foreignObject x="125" y="327" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_3_8"></div>
+            </foreignObject>
             <!--                      /Column 4                   -->
 
             <!--                       Column 5                   -->
-            <rect class="cell" x="165" y="3"   />
-                <foreignObject x="165" y="3"    width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_4_0"></div>
-                </foreignObject>
-            <rect class="cell" x="165" y="43"  />
-                <foreignObject x="165" y="43"   width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_4_1"></div>
-                </foreignObject>
-            <rect class="cell" x="165" y="83"  />
-                <foreignObject x="165" y="83"   width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_4_2"></div>
-                </foreignObject>
-            <rect class="cell" x="165" y="125" />
-                <foreignObject x="165" y="125"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_4_3"></div>
-                </foreignObject>
-            <rect class="cell" x="165" y="165" />
-                <foreignObject x="165" y="165"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_4_4"></div>
-                </foreignObject>
-            <rect class="cell" x="165" y="205" />
-                <foreignObject x="165" y="205"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_4_5"></div>
-                </foreignObject>
-            <rect class="cell" x="165" y="247" />
-                <foreignObject x="165" y="247"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_4_6"></div>
-                </foreignObject>
-            <rect class="cell" x="165" y="287" />
-                <foreignObject x="165" y="287"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_4_7"></div>
-                </foreignObject>
-            <rect class="cell" x="165" y="327" />
-                <foreignObject x="165" y="327"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_4_8"></div>
-                </foreignObject>
+            <rect class="cell" x="165" y="3"/>
+            <foreignObject x="165" y="3" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_4_0"></div>
+            </foreignObject>
+            <rect class="cell" x="165" y="43"/>
+            <foreignObject x="165" y="43" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_4_1"></div>
+            </foreignObject>
+            <rect class="cell" x="165" y="83"/>
+            <foreignObject x="165" y="83" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_4_2"></div>
+            </foreignObject>
+            <rect class="cell" x="165" y="125"/>
+            <foreignObject x="165" y="125" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_4_3"></div>
+            </foreignObject>
+            <rect class="cell" x="165" y="165"/>
+            <foreignObject x="165" y="165" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_4_4"></div>
+            </foreignObject>
+            <rect class="cell" x="165" y="205"/>
+            <foreignObject x="165" y="205" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_4_5"></div>
+            </foreignObject>
+            <rect class="cell" x="165" y="247"/>
+            <foreignObject x="165" y="247" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_4_6"></div>
+            </foreignObject>
+            <rect class="cell" x="165" y="287"/>
+            <foreignObject x="165" y="287" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_4_7"></div>
+            </foreignObject>
+            <rect class="cell" x="165" y="327"/>
+            <foreignObject x="165" y="327" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_4_8"></div>
+            </foreignObject>
             <!--                      /Column 5                   -->
 
             <!--                       Column 6                   -->
-            <rect class="cell" x="205" y="3"   />
-                <foreignObject x="205" y="3"    width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_5_0"></div>
-                </foreignObject>
-            <rect class="cell" x="205" y="43"  />
-                <foreignObject x="205" y="43"   width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_5_1"></div>
-                </foreignObject>
-            <rect class="cell" x="205" y="83"  />
-                <foreignObject x="205" y="83"   width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_5_2"></div>
-                </foreignObject>
-            <rect class="cell" x="205" y="125" />
-                <foreignObject x="205" y="125"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_5_3"></div>
-                </foreignObject>
-            <rect class="cell" x="205" y="165" />
-                <foreignObject x="205" y="165"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_5_4"></div>
-                </foreignObject>
-            <rect class="cell" x="205" y="205" />
-                <foreignObject x="205" y="205"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_5_5"></div>
-                </foreignObject>
-            <rect class="cell" x="205" y="247" />
-                <foreignObject x="205" y="247"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_5_6"></div>
-                </foreignObject>
-            <rect class="cell" x="205" y="287" />
-                <foreignObject x="205" y="287"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_5_7"></div>
-                </foreignObject>
-            <rect class="cell" x="205" y="327" />
-                <foreignObject x="205" y="327"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_5_8"></div>
-                </foreignObject>
+            <rect class="cell" x="205" y="3"/>
+            <foreignObject x="205" y="3" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_5_0"></div>
+            </foreignObject>
+            <rect class="cell" x="205" y="43"/>
+            <foreignObject x="205" y="43" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_5_1"></div>
+            </foreignObject>
+            <rect class="cell" x="205" y="83"/>
+            <foreignObject x="205" y="83" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_5_2"></div>
+            </foreignObject>
+            <rect class="cell" x="205" y="125"/>
+            <foreignObject x="205" y="125" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_5_3"></div>
+            </foreignObject>
+            <rect class="cell" x="205" y="165"/>
+            <foreignObject x="205" y="165" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_5_4"></div>
+            </foreignObject>
+            <rect class="cell" x="205" y="205"/>
+            <foreignObject x="205" y="205" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_5_5"></div>
+            </foreignObject>
+            <rect class="cell" x="205" y="247"/>
+            <foreignObject x="205" y="247" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_5_6"></div>
+            </foreignObject>
+            <rect class="cell" x="205" y="287"/>
+            <foreignObject x="205" y="287" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_5_7"></div>
+            </foreignObject>
+            <rect class="cell" x="205" y="327"/>
+            <foreignObject x="205" y="327" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_5_8"></div>
+            </foreignObject>
             <!--                      /Column 6                   -->
 
             <!--                       Column 7                   -->
-            <rect class="cell" x="247" y="3"   />
-                <foreignObject x="247" y="3"    width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_6_0"></div>
-                </foreignObject>
-            <rect class="cell" x="247" y="43"  />
-                <foreignObject x="247" y="43"   width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_6_1"></div>
-                </foreignObject>
-            <rect class="cell" x="247" y="83"  />
-                <foreignObject x="247" y="83"   width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_6_2"></div>
-                </foreignObject>
-            <rect class="cell" x="247" y="125" />
-                <foreignObject x="247" y="125"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_6_3"></div>
-                </foreignObject>
-            <rect class="cell" x="247" y="165" />
-                <foreignObject x="247" y="165"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_6_4"></div>
-                </foreignObject>
-            <rect class="cell" x="247" y="205" />
-                <foreignObject x="247" y="205"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_6_5"></div>
-                </foreignObject>
-            <rect class="cell" x="247" y="247" />
-                <foreignObject x="247" y="247"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_6_6"></div>
-                </foreignObject>
-            <rect class="cell" x="247" y="287" />
-                <foreignObject x="247" y="287"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_6_7"></div>
-                </foreignObject>
-            <rect class="cell" x="247" y="327" />
-                <foreignObject x="247" y="327"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_6_8"></div>
-                </foreignObject>
+            <rect class="cell" x="247" y="3"/>
+            <foreignObject x="247" y="3" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_6_0"></div>
+            </foreignObject>
+            <rect class="cell" x="247" y="43"/>
+            <foreignObject x="247" y="43" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_6_1"></div>
+            </foreignObject>
+            <rect class="cell" x="247" y="83"/>
+            <foreignObject x="247" y="83" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_6_2"></div>
+            </foreignObject>
+            <rect class="cell" x="247" y="125"/>
+            <foreignObject x="247" y="125" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_6_3"></div>
+            </foreignObject>
+            <rect class="cell" x="247" y="165"/>
+            <foreignObject x="247" y="165" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_6_4"></div>
+            </foreignObject>
+            <rect class="cell" x="247" y="205"/>
+            <foreignObject x="247" y="205" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_6_5"></div>
+            </foreignObject>
+            <rect class="cell" x="247" y="247"/>
+            <foreignObject x="247" y="247" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_6_6"></div>
+            </foreignObject>
+            <rect class="cell" x="247" y="287"/>
+            <foreignObject x="247" y="287" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_6_7"></div>
+            </foreignObject>
+            <rect class="cell" x="247" y="327"/>
+            <foreignObject x="247" y="327" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_6_8"></div>
+            </foreignObject>
             <!--                      /Column 7                   -->
 
             <!--                       Column 8                   -->
-            <rect class="cell" x="287" y="3"   />
-                <foreignObject x="287" y="3"    width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_7_0"></div>
-                </foreignObject>
-            <rect class="cell" x="287" y="43"  />
-                <foreignObject x="287" y="43"   width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_7_1"></div>
-                </foreignObject>
-            <rect class="cell" x="287" y="83"  />
-                <foreignObject x="287" y="83"   width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_7_2"></div>
-                </foreignObject>
-            <rect class="cell" x="287" y="125" />
-                <foreignObject x="287" y="125"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_7_3"></div>
-                </foreignObject>
-            <rect class="cell" x="287" y="165" />
-                <foreignObject x="287" y="165"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_7_4"></div>
-                </foreignObject>
-            <rect class="cell" x="287" y="205" />
-                <foreignObject x="287" y="205"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_7_5"></div>
-                </foreignObject>
-            <rect class="cell" x="287" y="247" />
-                <foreignObject x="287" y="247"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_7_6"></div>
-                </foreignObject>
-            <rect class="cell" x="287" y="287" />
-                <foreignObject x="287" y="287"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_7_7"></div>
-                </foreignObject>
-            <rect class="cell" x="287" y="327" />
-                <foreignObject x="287" y="327"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_7_8"></div>
-                </foreignObject>
+            <rect class="cell" x="287" y="3"/>
+            <foreignObject x="287" y="3" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_7_0"></div>
+            </foreignObject>
+            <rect class="cell" x="287" y="43"/>
+            <foreignObject x="287" y="43" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_7_1"></div>
+            </foreignObject>
+            <rect class="cell" x="287" y="83"/>
+            <foreignObject x="287" y="83" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_7_2"></div>
+            </foreignObject>
+            <rect class="cell" x="287" y="125"/>
+            <foreignObject x="287" y="125" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_7_3"></div>
+            </foreignObject>
+            <rect class="cell" x="287" y="165"/>
+            <foreignObject x="287" y="165" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_7_4"></div>
+            </foreignObject>
+            <rect class="cell" x="287" y="205"/>
+            <foreignObject x="287" y="205" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_7_5"></div>
+            </foreignObject>
+            <rect class="cell" x="287" y="247"/>
+            <foreignObject x="287" y="247" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_7_6"></div>
+            </foreignObject>
+            <rect class="cell" x="287" y="287"/>
+            <foreignObject x="287" y="287" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_7_7"></div>
+            </foreignObject>
+            <rect class="cell" x="287" y="327"/>
+            <foreignObject x="287" y="327" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_7_8"></div>
+            </foreignObject>
             <!--                     /Column 8                    -->
 
             <!--                      Column 9                    -->
-            <rect class="cell" x="327" y="3"   />
-                <foreignObject x="327" y="3"    width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_8_0"></div>
-                </foreignObject>
-            <rect class="cell" x="327" y="43"  />
-                <foreignObject x="327" y="43"   width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_8_1"></div>
-                </foreignObject>
-            <rect class="cell" x="327" y="83"  />
-                <foreignObject x="327" y="83"   width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_8_2"></div>
-                </foreignObject>
-            <rect class="cell" x="327" y="125" />
-                <foreignObject x="327" y="125"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_8_3"></div>
-                </foreignObject>
-            <rect class="cell" x="327" y="165" />
-                <foreignObject x="327" y="165"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_8_4"></div>
-                </foreignObject>
-            <rect class="cell" x="327" y="205" />
-                <foreignObject x="327" y="205"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_8_5"></div>
-                </foreignObject>
-            <rect class="cell" x="327" y="247" />
-                <foreignObject x="327" y="247"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_8_6"></div>
-                </foreignObject>
-            <rect class="cell" x="327" y="287" />
-                <foreignObject x="327" y="287"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_8_7"></div>
-                </foreignObject>
-            <rect class="cell" x="327" y="327" />
-                <foreignObject x="327" y="327"  width="40" height="40" class="wrapper-input-cell">
-                    <div class="cell_number" id="cell_8_8"></div>
-                </foreignObject>
-
+            <rect class="cell" x="327" y="3"/>
+            <foreignObject x="327" y="3" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_8_0"></div>
+            </foreignObject>
+            <rect class="cell" x="327" y="43"/>
+            <foreignObject x="327" y="43" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_8_1"></div>
+            </foreignObject>
+            <rect class="cell" x="327" y="83"/>
+            <foreignObject x="327" y="83" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_8_2"></div>
+            </foreignObject>
+            <rect class="cell" x="327" y="125"/>
+            <foreignObject x="327" y="125" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_8_3"></div>
+            </foreignObject>
+            <rect class="cell" x="327" y="165"/>
+            <foreignObject x="327" y="165" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_8_4"></div>
+            </foreignObject>
+            <rect class="cell" x="327" y="205"/>
+            <foreignObject x="327" y="205" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_8_5"></div>
+            </foreignObject>
+            <rect class="cell" x="327" y="247"/>
+            <foreignObject x="327" y="247" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_8_6"></div>
+            </foreignObject>
+            <rect class="cell" x="327" y="287"/>
+            <foreignObject x="327" y="287" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_8_7"></div>
+            </foreignObject>
+            <rect class="cell" x="327" y="327"/>
+            <foreignObject x="327" y="327" width="40" height="40" class="wrapper-div-cell">
+                <div class="cell_number" id="cell_8_8"></div>
+            </foreignObject>
             <!--                      /Column 9                   -->
 
-        <!--                          /Cells                              -->
- 
-        <!--                      The outer border                        -->
-            <rect class="outer_border" x="2" y="2" />
-        <!--                     /The outer border                        -->
+            <!--                          /Cells                              -->
 
-        <!--                      The inner borders                       -->
+            <!--                      The outer border                        -->
+            <rect class="outer_border" x="2" y="2"/>
+            <!--                     /The outer border                        -->
+
+            <!--                      The inner borders                       -->
             <!--                       Vertical                        -->
             <line class="inner_border" x1="124" y1="2" x2="124" y2="368"/>
             <line class="inner_border" x1="246" y1="2" x2="246" y2="368"/>
@@ -381,30 +399,26 @@
             <line class="inner_border" x1="2" y1="124" x2="368" y2="124"/>
             <line class="inner_border" x1="2" y1="246" x2="368" y2="246"/>
             <!--                      /Horizontal                      -->
-        <!--                     /The inner borders                       -->
-    </svg>
-
-
-<div class="wrapper_numbers">
-<div class="numbers">
-    <div class="number" id="number_1" onclick="chooseNumber(this);">1</div>
-    <div class="number" id="number_2" onclick="chooseNumber(this);">2</div>
-    <div class="number" id="number_3" onclick="chooseNumber(this);">3</div>
-    <div class="number" id="number_4" onclick="chooseNumber(this);">4</div>
-    <div class="number" id="number_5" onclick="chooseNumber(this);">5</div>
-    <div class="number" id="number_6" onclick="chooseNumber(this);">6</div>
-    <div class="number" id="number_7" onclick="chooseNumber(this);">7</div>
-    <div class="number" id="number_8" onclick="chooseNumber(this);">8</div>
-    <div class="number" id="number_9" onclick="chooseNumber(this);">9</div>
-</div> 
+            <!--                     /The inner borders                       -->
+        </svg>
+    </div>
+    <div class="wrapper_numbers">
+        <div class="numbers">
+            <div class="number" id="number_1" onclick="chooseNumber(this);">1</div>
+            <div class="number" id="number_2" onclick="chooseNumber(this);">2</div>
+            <div class="number" id="number_3" onclick="chooseNumber(this);">3</div>
+            <div class="number" id="number_4" onclick="chooseNumber(this);">4</div>
+            <div class="number" id="number_5" onclick="chooseNumber(this);">5</div>
+            <div class="number" id="number_6" onclick="chooseNumber(this);">6</div>
+            <div class="number" id="number_7" onclick="chooseNumber(this);">7</div>
+            <div class="number" id="number_8" onclick="chooseNumber(this);">8</div>
+            <div class="number" id="number_9" onclick="chooseNumber(this);">9</div>
+        </div>
+    </div>
 </div>
-<div class="number" id="number_9" onclick="deleteNumber();"><img src="/image/eraser.svg" alt="eraser"></div>
-</div>
-
-
 <!--                Script                 -->
-<script src="js/jquery-3.4.1.min.js"></script> 
-<script src="js/base.js"></script>        
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/base.js"></script>
 <!--               /Script                 -->
 </body>
 </html>
