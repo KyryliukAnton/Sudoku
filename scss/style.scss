@@ -3,10 +3,13 @@
 //      /import
 
 //      variables
-$color-border: #4E3B45;
-$color-field: #CDDAC8;
-$color-text: #4E3B45;
-$color-input-numbers: #381;
+$color-border: #4D9698;
+$color-field: #FADE97;
+$color-text: #4D9698;
+$color-input-numbers: #5F6B11;
+$color_block_back: white;
+$color_block_border: black;
+$color_block_text: black;
 //     /variables
 
 //        mixins
@@ -24,88 +27,181 @@ $color-input-numbers: #381;
 
 * {
   box-sizing: border-box;
-  font-size: 16px;
+}
+
+body,html {
+  font-size: 20px;
   font-weight: 700;
   color: $color-text;
-  font-family: 'Noto Serif';
+//  font-family: 'Noto Serif';
 }
 
-.playing_field {
-  margin: 15vh auto 0;
-  padding: 20px;
-  max-width: 70vh;
-}
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  .wrapper_content {
+    margin: 0 auto;
+    padding: 10px;
+    width: 980px;
+    
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      #eraser {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
 
-svg {
-  .cell {
-    fill: $color-field;
-    @include border(1);
-    @include size-square(40);
+        path {
+          fill: $color-text;
+        }
+      }
   }
 
-  .outer_border {
-    fill: none;
-    @include border(3);
-    @include size-square(366);
+    .playing_field {
+      margin: 0 auto;
+      max-width: 80vh;
+      //max-width: 80%;
+      // height: 100px;
+      svg {
+        .cell {
+          fill: $color-field;
+          @include border(1);
+          @include size-square(40);
+        }
+
+        .outer_border {
+          fill: none;
+          @include border(3);
+          @include size-square(366);
+        }
+
+        .inner_border {
+          @include border(3);
+        }
+
+        .wrapper-div-cell {
+          @include size-square(40);
+
+          .cell_number {
+            cursor: default;
+          }
+
+          div.input_number {
+            cursor: pointer;
+            color: $color-input-numbers;
+          }
+        }
+
+        div {
+          width: 100%;
+          height: 100%;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    .wrapper_numbers {
+      display: flex;
+      justify-content: center;
+
+      .numbers {
+        display: flex;
+        border: 2px solid $color-border;
+
+        .number {
+          padding: 10px;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+
+        :last-child {
+          border: 0;
+          width: 48px;
+        }
+
+        > * {
+          flex: 1 1 250px;
+          margin: 0 10px;
+        }
+      }
+    }
   }
 
-  .inner_border {
-    @include border(3);
-  }
-
-  .wrapper-input-cell {
-    @include size-square(40);
-
-    .cell_number {
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    .popup {
+      color: $color-text;
+      background: #fff;
+      border-radius: 5px;
+      padding: 30px;
+      left: 50%;
+      margin-top: 50vh;
+      display: inline-block;
+      transform: translate(-50%, -50%);
+      position: relative;
       cursor: default;
+      text-align: center;
+
+      #start {
+        font-size: 40px;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      #victory {
+        display: none;
+
+        .div_victory {
+          margin: 15px 0 5px;
+        }
+      }
     }
   }
 
   div {
-    width: 92%;
-    height: 92%;
-    font-size: 20px;
-    margin: 4%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 1rem;
   }
 }
 
-.numbers {
+// Extra small devices (portrait phones, less than 576px)
 
-  display: flex;
-  border: 2px solid $color-border;
-  //width: 450px;
-  .number {
-    //width: 50px;
-    //height: 48px;
-    padding: 10px;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    //border: 2px solid $color-border;
-  }
-  :last-child {
-    border: 0;
-    width: 48px;
-  }
 
-   > * {
-    flex: 1 1 250px;
-    margin: 0 10px;
-  }
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 768px) {  
+
 }
 
-.wrapper_numbers {
-  display: flex;
-  justify-content: center;
-} 
+// Medium devices (tablets, less than 992px)
+@media (max-width: 992px) {  
 
-
-.wrapper-input-cell div.input_number {
-  cursor: pointer; 
-  color: $color-input-numbers;
 }
+
+// Large devices (desktops, less than 1200px)
+@media screen and (max-width: 1200px) {
+
+}
+
+// @media (min-width: 600px) and (max-width: 800px) {
+//     body .wrapper_content {
+//       background: red !important;
+//     }
+// }
