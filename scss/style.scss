@@ -33,7 +33,13 @@ body,html {
   font-size: 20px;
   font-weight: 700;
   color: $color-text;
-//  font-family: 'Noto Serif';
+  font-family: 'Noto Serif';
+}
+
+@media (max-width: 330px),(max-height: 470px){ 
+  body,html {
+    font-size: 16px;
+  }
 }
 
 body {
@@ -41,18 +47,21 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  display: flex;
-  align-items: center;
+  position: relative;
+
   .wrapper_content {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
     margin: 0 auto;
     padding: 10px;
-    width: 980px;
+    max-width: 650px;
     
     .header {
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 40px;
       #eraser {
         width: 40px;
         height: 40px;
@@ -62,13 +71,19 @@ body {
           fill: $color-text;
         }
       }
+
+      @media (max-width: 500px),(max-height: 470px){ 
+        #eraser {
+          width: 30px;
+          height: 30px;
+        }
+      }
   }
 
     .playing_field {
-      margin: 0 auto;
+      margin: 5px auto;
       max-width: 80vh;
-      //max-width: 80%;
-      // height: 100px;
+
       svg {
         .cell {
           fill: $color-field;
@@ -110,6 +125,12 @@ body {
       }
     }
 
+    @media (max-height: 605px){ 
+      .playing_field {
+        max-width: 73vh;
+      }
+    }
+
     .wrapper_numbers {
       display: flex;
       justify-content: center;
@@ -119,8 +140,7 @@ body {
         border: 2px solid $color-border;
 
         .number {
-          padding: 10px;
-          font-size: 20px;
+          padding: 8px 10px 10px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -137,11 +157,31 @@ body {
           margin: 0 10px;
         }
       }
+      @media (max-width: 500px),(max-height: 470px){
+        .numbers {
+         & > * {
+           margin: 0;
+          }
+
+          .number {
+            padding: 3px 10px 5px;
+          }
+        }
+      }
+
+      @media (max-width: 330px){ 
+        .numbers {
+          .number {
+            padding: 3px 5px 5px;
+          }
+      }
+     }
     }
   }
 
   .overlay {
     position: fixed;
+    z-index: 10;
     top: 0;
     bottom: 0;
     left: 0;
@@ -176,32 +216,4 @@ body {
       }
     }
   }
-
-  div {
-    font-size: 1rem;
-  }
 }
-
-// Extra small devices (portrait phones, less than 576px)
-
-
-// Small devices (landscape phones, less than 768px)
-@media (max-width: 768px) {  
-
-}
-
-// Medium devices (tablets, less than 992px)
-@media (max-width: 992px) {  
-
-}
-
-// Large devices (desktops, less than 1200px)
-@media screen and (max-width: 1200px) {
-
-}
-
-// @media (min-width: 600px) and (max-width: 800px) {
-//     body .wrapper_content {
-//       background: red !important;
-//     }
-// }
