@@ -10,6 +10,7 @@ $color-input-numbers: #5F6B11;
 $color_block_back: white;
 $color_block_border: black;
 $color_block_text: black;
+
 //     /variables
 
 //        mixins
@@ -29,15 +30,15 @@ $color_block_text: black;
   box-sizing: border-box;
 }
 
-body,html {
+body, html {
   font-size: 20px;
   font-weight: 700;
   color: $color-text;
   font-family: 'Noto Serif';
 }
 
-@media (max-width: 330px),(max-height: 470px){ 
-  body,html {
+@media (max-width: 330px), (max-height: 470px) {
+  body, html {
     font-size: 16px;
   }
 }
@@ -56,12 +57,13 @@ body {
     margin: 0 auto;
     padding: 10px;
     max-width: 650px;
-    
+
     .header {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       #eraser {
         width: 40px;
         height: 40px;
@@ -72,13 +74,13 @@ body {
         }
       }
 
-      @media (max-width: 500px),(max-height: 470px){ 
+      @media (max-width: 500px), (max-height: 470px) {
         #eraser {
           width: 30px;
           height: 30px;
         }
       }
-  }
+    }
 
     .playing_field {
       margin: 5px auto;
@@ -125,7 +127,7 @@ body {
       }
     }
 
-    @media (max-height: 605px){ 
+    @media (max-height: 605px) {
       .playing_field {
         max-width: 73vh;
       }
@@ -147,20 +149,15 @@ body {
           cursor: pointer;
         }
 
-        :last-child {
-          border: 0;
-          width: 48px;
-        }
-
         > * {
-          flex: 1 1 250px;
           margin: 0 10px;
         }
       }
-      @media (max-width: 500px),(max-height: 470px){
+
+      @media (max-width: 490px), (max-height: 470px) {
         .numbers {
-         & > * {
-           margin: 0;
+          & > * {
+            margin: 0;
           }
 
           .number {
@@ -169,13 +166,13 @@ body {
         }
       }
 
-      @media (max-width: 330px){ 
+      @media (max-width: 290px) {
         .numbers {
           .number {
             padding: 3px 5px 5px;
           }
+        }
       }
-     }
     }
   }
 
@@ -187,6 +184,7 @@ body {
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.7);
+
     .popup {
       color: $color-text;
       background: #fff;
