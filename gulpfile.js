@@ -3,26 +3,26 @@
 const gulp = require('gulp'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
-    brSync = require('browser-sync').create();   // подключаем плагин browser sync
+    brSync = require('browser-sync').create();   // підключаємо плагін browser sync
 
 gulp.task('sass', () => {
     return gulp.src('scss/**/*.scss')
-        .pipe(sourcemaps.init())        // активируем gulp-sourcemaps 
+        .pipe(sourcemaps.init())        // активуємо gulp-sourcemaps 
         .pipe(sass({
             outputStyle: 'nested',
         })
             .on('error', sass.logError))
-        .pipe(sourcemaps.write())   // создание карты css.map в текущей папке 
+        .pipe(sourcemaps.write())   // створення карти css.map в поточній папці 
         .pipe(gulp.dest('css')) 
-        .pipe(brSync.reload({ stream: true }))  // обновление (перезагрузка) страницы
+        .pipe(brSync.reload({ stream: true }))  // перезавантаження сторінки
 });
 
 gulp.task('brSync', () => {
     brSync.init({
-        server: {           // локальный сервер
-            baseDir: "./" // корневая папка
+        server: {           // локальний сервер
+            baseDir: "./" // коренева папка
         },
-        notify: true  // отклчение уведомлений
+        notify: true  // відключення сповіщень
     });
 });
 
@@ -37,9 +37,9 @@ gulp.task('js', () => {
 });
 
 gulp.task('watch', gulp.parallel('brSync', () => {
-    gulp.watch('scss/**/*.scss', gulp.parallel('sass')); // следим за изменениями SASS
-    gulp.watch('./*.html', gulp.parallel('html'))     // следим за изменениями HTML
-    gulp.watch('js/**/*.js', gulp.parallel('js')); // следим за изменениями JS  
+    gulp.watch('scss/**/*.scss', gulp.parallel('sass')); // слідкувати за змінами SASS (SCSS)
+    gulp.watch('./*.html', gulp.parallel('html'))     // слідкувати за змінами HTML
+    gulp.watch('js/**/*.js', gulp.parallel('js')); // слідкувати за змінами JS  
 }));
 
-gulp.task('default', gulp.parallel('sass', 'watch'));  // задача по умолчанию (gulp)
+gulp.task('default', gulp.parallel('sass', 'watch'));  // задача по замовчуванню (gulp)
