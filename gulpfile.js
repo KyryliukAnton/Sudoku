@@ -3,6 +3,7 @@
 const gulp = require('gulp'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
+    autoprefixer = require('gulp-autoprefixer'),
     brSync = require('browser-sync').create();   // підключаємо плагін browser sync
 
 gulp.task('sass', () => {
@@ -12,10 +13,14 @@ gulp.task('sass', () => {
             outputStyle: 'nested',
         })
             .on('error', sass.logError))
-        .pipe(sourcemaps.write())   // створення карти css.map в поточній папці 
+        .pipe(autoprefixer({
+            overrideBrowserslist: ['last 2 versions'], 
+            cascade: false
+        }))
+        .pipe(sourcemaps.write())   // створення карти css.map в поточній папці
         .pipe(gulp.dest('css')) 
         .pipe(brSync.reload({ stream: true }))  // перезавантаження сторінки
-});
+});     
 
 gulp.task('brSync', () => {
     brSync.init({
